@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#161819">
+  <title>Blocking Lab · Virtual production</title>
+  <script type="module" crossorigin src="./index-BezZjN7j.js"></script>
+  <link rel="modulepreload" crossorigin href="./rolldown-runtime-B8xr6ykz.js">
+  <link rel="modulepreload" crossorigin href="./three.module-B5zTWBY8.js">
+  <link rel="modulepreload" crossorigin href="./preload-helper-DceFCjzs.js">
+  <link rel="stylesheet" crossorigin href="./index-de5U8Hu2.css">
+</head>
+<body>
+<main>
+  <header class="topbar">
+    <a class="brand" href="./"><span class="brand-mark" aria-hidden="true"></span>Blocking Lab</a>
+    <button id="launch" disabled>Checking VR</button>
+  </header>
+  <section class="workspace" aria-label="Production workspace">
+    <section class="viewport" aria-labelledby="stage-title">
+      <header class="viewport-bar">
+        <div class="stage-title"><h1 id="stage-title">Stage</h1><span id="room-name">Living room</span></div>
+        <label class="file"><span aria-hidden="true">↑</span> Import set <input id="room" type="file" accept=".glb,.gltf"></label>
+      </header>
+      <div class="stage-view">
+        <div id="stage" aria-label="Interactive 3D scene"></div>
+        <div class="view-label" aria-hidden="true"><span class="view-icon"></span> Perspective</div>
+        <div class="view-frame" aria-hidden="true"></div>
+      </div>
+      <div class="transport" aria-label="Scene transport">
+        <button id="play" disabled>▶ Play</button>
+        <span id="timecode" aria-label="Elapsed scene time">00:00.0</span>
+        <span class="transport-state" id="transport-state">Standby</span>
+      </div>
+      <div class="viewport-status"><span class="status-light" aria-hidden="true"></span><p id="info" role="status">Add a character or camera to begin.</p></div>
+    </section>
+    <aside aria-label="Scene controls">
+      <section class="outliner" aria-labelledby="scene-title">
+        <div class="section-bar"><h2 id="scene-title">Scene</h2><button id="add" aria-expanded="false" aria-controls="add-menu">＋ Add</button></div>
+        <div class="actions" id="add-menu" hidden><button id="add-actor">Character</button><button id="add-camera">Camera</button></div>
+        <ul id="objects" aria-label="Scene objects"></ul>
+        <p id="empty-scene">No characters or cameras</p>
+      </section>
+      <section class="inspector" aria-labelledby="inspector-title">
+        <div class="section-bar"><h2 id="inspector-title">Inspector</h2></div>
+        <div class="inspector-content">
+          <p id="selection-name">Select an object in the scene.</p>
+          <button class="scene-export" id="export-character" hidden disabled>Export animation (.glb)</button>
+          <div class="actions" id="camera-tools" hidden>
+            <button id="camera-move">Move</button><button id="camera-rotate">Rotate</button>
+            <button id="review" disabled>Review</button><button id="export" disabled>Export video</button>
+          </div>
+        </div>
+      </section>
+      <section class="audio-settings" aria-labelledby="audio-title">
+        <div class="section-bar"><h2 id="audio-title">Audio</h2></div>
+        <div class="audio-content">
+          <div class="mic-row"><span id="mic-state">Mic off</span><button id="mic">Enable microphone</button></div>
+          <label class="monitor"><input id="monitor" type="checkbox" checked> Monitor previous takes</label>
+        </div>
+      </section>
+      <p id="status" role="status"></p>
+    </aside>
+  </section>
+  <dialog id="review-dialog">
+    <header><strong id="review-title"></strong><button id="close-review">Close</button></header>
+    <video id="review-video" controls playsinline></video>
+  </dialog>
+</main>
+</body>
+</html>
